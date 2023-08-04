@@ -1,0 +1,74 @@
+/* universal css */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.body{
+    background: url("../backgroundimage.jpg") ;
+    /* vh ka mtlb jis bhi deice me ho aap uski veiw ki height */
+    min-height: 100vh;
+    /* snake ko ek dm side me kiskane ke leye background size property ka use krege */
+    background-size: 100vw 100vh;
+    /* no repeat ki vase jarurat ni hae kyuki 100vh n 100vw diya hua hae  */
+    background-repeat: no-repeat;
+    /* center isley kyuki jo body me board hae uski sarii items center me aayege */
+    /* isley flex box bnaya */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#scoreBox{
+    position:absolute;
+    top: 15px;
+    right:200px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'Bungee Spice', cursive;
+}
+
+/* #hiscoreBox{
+    position:absolute;
+    top: 60px;
+    right:130px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'Bungee Spice', cursive;
+} */
+
+#board{
+    /* linear gradient se do colours at a time use kr skte */
+    background: linear-gradient(rgb(132, 208, 132),rgb(227, 227, 111));
+    /* vmin- vh ya vw me se jo chota hoga vo vmin hoga aur vh aur vw me se bda hoga vo vmax hoga  */
+    width:90vmin;
+    height:92vmin;
+    border: 2px solid black;
+    display: grid;
+    /* fr is per unit 18 rows bnege aur 18 col bnege*/
+    /* 18 rows 18 col ki simple si ek grid */
+    grid-template-rows: repeat(18,1fr); 
+    grid-template-columns: repeat(18,1fr); 
+}
+
+/* do classes bnayege ek snke ke head ke leye aur dusre snake ke food ke leye */
+
+.head{
+    background: linear-gradient(purple,yellow);
+    border: 2px solid white;
+    border-radius: 9px;
+    transform: scale(1.02);
+}
+
+.snake{
+    background-color: blueviolet;
+    border: .25 vmin solid white;
+    border-radius: 12px;
+}
+
+.food{
+    background-color: black;
+    border: .25 vmin solid rgb(51, 199, 237);
+    border-radius:8px;
+}
